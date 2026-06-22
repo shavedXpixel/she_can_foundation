@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-shecanRed: #ff0000;
+  --color-shecanDark: #111111;
+}
+
+@layer base {
+  body {
+    @apply bg-shecanDark text-white;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
