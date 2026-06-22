@@ -66,7 +66,7 @@ const AdminDashboard = () => {
     return Object.keys(counts).map(key => ({ name: key, value: counts[key] }));
   };
 
-  const areaColors = ['#ff0000', '#cc0000', '#990000', '#660000', '#ff4d4d'];
+  const areaColors = ['#ef4444', '#f97316', '#eab308', '#3b82f6', '#a855f7'];
 
   const filteredSubmissions = submissions.filter(sub => 
     sub.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -130,7 +130,7 @@ const AdminDashboard = () => {
                     <XAxis dataKey="name" stroke="#666" />
                     <YAxis stroke="#666" allowDecimals={false} />
                     <RechartsTooltip cursor={{ fill: '#222' }} contentStyle={{ backgroundColor: '#111', borderColor: '#333', color: '#fff' }} />
-                    <Bar dataKey="value" fill="#ff0000" radius={[4, 4, 0, 0]} />
+                    <Bar dataKey="value" fill="#ef4444" radius={[4, 4, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
