@@ -71,28 +71,18 @@ A full-stack web application built for the She Can Foundation as an internship a
 4. Under **Network Access**, allow access from anywhere (`0.0.0.0/0`).
 5. Click **Connect** on your cluster, select "Drivers" (Node.js), and copy the connection string.
 
-### 2. Deploy Backend (Render.com)
-1. Push your code to a GitHub repository.
-2. Go to [Render.com](https://render.com) and log in with GitHub.
-3. Click **New +** and select **Web Service**.
-4. Connect your GitHub repository.
-5. Setup the service:
-   - **Root Directory:** `backend`
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start`
-6. Expand **Advanced** and add Environment Variables:
+### 2. Unified Deployment (Vercel)
+This project is configured as a Monorepo for Vercel, meaning both the React frontend and the Node.js backend (as Serverless Functions) are deployed together instantly.
+
+1. Push your codebase to a GitHub repository.
+2. Go to [Vercel](https://vercel.com) and log in with your GitHub account.
+3. Click **Add New...** -> **Project**.
+4. Import your GitHub repository.
+5. **Important**: Leave the **Root Directory** as the main project folder (`./`). Do *not* select the `frontend` or `backend` folder. Our custom `vercel.json` file will handle all the routing and build commands automatically!
+6. Expand **Environment Variables** and add your backend variables:
    - `MONGODB_URI`: (Paste your Atlas connection string here)
    - `ADMIN_USER`: `admin`
    - `ADMIN_PASS`: `password123`
-7. Click **Create Web Service**. Render will give you a live URL (e.g., `https://shecan-api.onrender.com`).
-
-### 3. Deploy Frontend (Vercel.com)
-1. In your `frontend/src/api/axios.js` file, make sure the `baseURL` points to your new Render backend URL instead of `localhost`. 
-2. Go to [Vercel](https://vercel.com) and log in with GitHub.
-3. Click **Add New...** -> **Project**.
-4. Import your GitHub repository.
-5. Set the **Framework Preset** to Vite.
-6. Set the **Root Directory** to `frontend`.
 7. Click **Deploy**.
 
-Congratulations! Your full-stack application is now live on the internet!
+Congratulations! Your full-stack application is now live on a single, lightning-fast Vercel domain!
